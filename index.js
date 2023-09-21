@@ -40,9 +40,13 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+
+function kopyala(dizi){
+  const kopya = Array.from(dizi);
+  return kopya;
 }
+const kopyalananTatlar = kopyala(orijinalTatlar);
+console.log(kopyalananTatlar);
 
 
 /* Görev 2:
@@ -56,10 +60,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi){
+  if (dizi.length === 25) {
+    return true;
+  } else {return false;
+  }
 }
-
+const dizi = dizi25Cesitmi(orijinalTatlar);
+console.log(dizi);
 
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
@@ -74,10 +82,14 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi, yeniTat){
+  dizi.unshift(yeniTat);
+
+  return dizi;
 }
 
+const yeniTatlar = cesitEkle(orijinalTatlar, "Kakule");
+console.log(yeniTatlar);
 
 /* Cörev 4:
 
@@ -92,10 +104,13 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+  dizi.pop();
+  return dizi;
 }
 
+const guncelTatlar = sonCesitiKaldir(orijinalTatlar);
+console.log(guncelTatlar)
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -115,7 +130,8 @@ function indekstekiCesitiGetir(/*kod buraya*/){
 
 /* Görev 6:
 
-Firma, ürün yelpazesine daha fazla lezzet eklemek istediğinden, sadece ilk veya son aromayı keyfi olarak çıkarmak yerine, aroma adına göre aromaları kaldırmaları gerektiğini fark ederler. Göreviniz, verilen bir dizinde, ada göre bu tadı diziden çıkarmak.
+Firma, ürün yelpazesine daha fazla lezzet eklemek istediğinden, sadece ilk veya son aromayı keyfi olarak çıkarmak yerine, aroma adına göre aromaları 
+kaldırmaları gerektiğini fark ederler. Göreviniz, verilen bir dizinde, ada göre bu tadı diziden çıkarmak.
 
 Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
    1. İlk parametrede tatlar dizisini argüman olarak alın
